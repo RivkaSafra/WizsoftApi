@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/themes/light.css" />
+<script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/shoelace-autoloader.js"></script>
+<script src="script.js"></script>
+
+</head>
+<body>
+    <sl-card class="card-overview">
+        <img
+        style="width:30%"
+          slot="image"
+          src="C:\Users\cobi\Downloads\flat-design-driving-school-invoice/inovice.jpg"
+          alt="inovice."
+        />
+      
+        <sl-input clearable id="accountKey" class="account-key-input"  onblur="handleAccountKeyBlur()" placeholder="Account key" size="large" pill></sl-input>
+        <div id="accounKeyContent"></div>
+        <sl-input label="שם חשבון" clearable id="שם חשבון" order="1" class="input-container" placeholder="שם חשבון"></sl-input>
+        <input clearable id="מפתח חשבון" class="input-container" placeholder="" ></input>
+        <input clearable id="חשבון ראשי" class="input-container" placeholder="" ></input>
+        <input clearable id="עיר" class="input-container" placeholder="" ></input>
+        <input clearable id="דואר אלקטרוני" class="input-container" placeholder="" ></input>
+        <input clearable id="טלפון" class="input-container" placeholder="" ></input>
+        <input clearable id="טלפון נייד" class="input-container" placeholder="" ></input>
+        <input clearable id="פקס" class="input-container" placeholder="" ></input>
+
+
+        <strong>Mittens</strong><br />
+        This kitten is as cute as he is playful. Bring him home today!<br />
+        <small>6 weeks old</small>
+      
+        <div slot="footer">
+          <sl-button variant="primary" pill>More Info</sl-button>
+        </div>
+      </sl-card>
+      
+      <style>
+        .card-overview {
+          max-width: 80%;
+          /* align-self: center; */
+          /* text-align: center; */
+          display: flex;
+        }
+ 
+        .card-overview small {
+          color: var(--sl-color-neutral-500);
+        }
+      
+        .card-overview [slot='footer'] {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        #accountKey{
+        width:40%;
+      }
+
+
+        .account-key-input {
+            width: 100%; /* Make inputs take up all available space */
+        }
+      </style>
+
+</body>
+</html>

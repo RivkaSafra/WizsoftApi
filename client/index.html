@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="script.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+  <title>Invoice Creator</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/themes/light.css" />
+<script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/shoelace-autoloader.js"></script>
+
+</head>
+
+<body>
+    <div class="invoice-container">
+      <h1>יצירת חשבונית</h1>
+      <label for="accountKey">מפתח חשבון:</label>
+      <sl-input clearable type="text" id="accountKey" class="account-key-input" placeholder="מפתח חשבון" onblur="handleAccountKeyBlur()"></sl-input>
+      <div id="accounKeyContent"></div>
+      <input clearable id="שם חשבון" class="input-container" placeholder="שם חשבון"></input>
+      <input clearable id="חשבון ראשי" class="input-container" placeholder="חשבון ראשי" ></input>
+      <input clearable id="עיר" class="input-container" placeholder="עיר" ></input>
+      <input clearable id="דואר אלקטרוני" class="input-container" placeholder="דואר אלקטרוני" ></input>
+      <input clearable id="טלפון" class="input-container" placeholder="טלפון" ></input>
+      <input clearable id="טלפון נייד" class="input-container" placeholder="טלפון נייד" ></input>
+      <input clearable id="פקס" class="input-container" placeholder="פקס"  ></input>
+
+      <div class="product-form">
+        <table id="productTable">
+          <thead>
+            <tr>
+              <th>מטבע</th>
+              <th>כמות</th>
+              <th>שער</th>
+              <th>הנחה (%)</th>
+              <th>מחיר</th>
+              <th>שם פריט</th>
+              <th>קוד פריט</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Product rows will be dynamically added here -->
+          </tbody>
+        </table>
+  
+        <button onclick="addProduct()">
+          <sl-icon style="font-size: 15px;" name="plus-circle"></sl-icon> הוסף מוצר</button>
+        <div class="invoice-preview">
+          <button onclick="createInvoice()">צור חשבונית</button>
+          <div id="errorsPreview" class="errorsPreview"></div>
+        </div>
+      </div>
+    </div>
+   
+  </div>
+<br/>
+  <div id="exportMovementsForm">
+    <h1>יצוא תנועות</h1>
+
+
+    <label for="accountKey">מפתח חשבון:</label>
+  <br/>
+    <input style="width:70%",  placeholder="מפתח חשבון"  type="text" id="accountKeyMovments" name="accountKey" required>
+    <br/>
+    
+    <div class="product-form">
+      <table id="productTable">
+        <thead>
+          <tr>
+            <th>תנועה</th>
+            <th>4 ספרות אחרונות של כרטיס אשראי</th>
+            <th>לקוח משלם באשראי</th>
+            <th>חשבון זכות ראשי</th>
+            <th>חשבון חובה ראשי</th>
+            <th>שם חשבון זכות</th>
+            <th>יתרת חשבון</th>
+            <th>סוג תנועה</th>
+            
+            <!-- Add more headers as needed -->
+          </tr>
+        </thead>
+        <tbody id="productTableBody">
+          <!-- Product rows will be dynamically added here -->
+        </tbody>
+      </table>
+
+    <button onclick="exportMovements()" type="submit">Export Movements</button>
+    <div id="exportMovementsResult"></div>
+    <div id="errorsMovmentsPreview" class="errorsPreview"></div>
+</div>
+  </div>
+
+  
+</body>
+</html>
